@@ -97,8 +97,8 @@ type variableProperties struct {
 			Enabled *bool
 		}
 
-		// include XTENDED variables
-		Xtended android.Product_variables
+		// include GZOSP variables
+		Gzosp android.Product_variables
 	} `android:"arch_variant"`
 }
 
@@ -173,8 +173,8 @@ type productVariables struct {
 
 	DeviceKernelHeaders []string `json:",omitempty"`
 
-	// include XTENDED variables
-	Xtended android.ProductVariables
+	// include GZOSP variables
+	Gzosp android.ProductVariables
 }
 
 func boolPtr(v bool) *bool {
@@ -364,3 +364,4 @@ func printfIntoProperty(propertyValue reflect.Value, variableValue interface{}) 
 
 	return nil
 }
+
