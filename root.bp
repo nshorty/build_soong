@@ -6,7 +6,7 @@ build = [
 
 subdirs = [
     "build/soong",
-    "vendor/gzosp/build/soong",
+    "vendor/xtended/build/soong",
 ]
 
 optional_subdirs = [
