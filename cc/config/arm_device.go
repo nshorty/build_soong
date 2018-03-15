@@ -78,7 +78,7 @@ var (
 
 	armThumbCflags = []string{
 		"-mthumb",
-		"-Os",
+		"-O2",
 		"-fomit-frame-pointer",
 		"-fno-strict-aliasing",
 	}
