@@ -147,7 +147,7 @@ var (
 			"-D__ARM_FEATURE_LPAE=1",
 		},
 		"kryo": []string{
-			"-mcpu=cortex-a15",
+			"-mcpu=cortex-a53",
 			"-mfpu=neon-fp-armv8",
 			// Fake an ARM compiler flag as these processors support LPAE which GCC/clang
 			// don't advertise.
@@ -189,7 +189,7 @@ func init() {
 	// Krait and Kryo targets are not supported by GCC, but are supported by Clang,
 	// so override the definitions when building modules with Clang.
 	replaceFirst(armClangCpuVariantCflags["krait"], "-mcpu=cortex-a15", "-mcpu=krait")
-	replaceFirst(armClangCpuVariantCflags["kryo"], "-mcpu=cortex-a15", "-mcpu=krait")
+	replaceFirst(armClangCpuVariantCflags["kryo"], "-mcpu=cortex-a53", "-mcpu=cortex-a53")
 
 	pctx.StaticVariable("armGccVersion", armGccVersion)
 
