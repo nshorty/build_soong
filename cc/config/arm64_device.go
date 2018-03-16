@@ -46,7 +46,7 @@ var (
 
 		// TARGET_RELEASE_CFLAGS
 		"-DNDEBUG",
-		"-O2 -g",
+		"-O2 -g0",
 		"-Wstrict-aliasing=2",
 		"-fgcse-after-reload",
 		"-frerun-cse-after-loop",
@@ -79,7 +79,7 @@ var (
 		"kryo": []string{
 			// Use the cortex-a57 cpu since some compilers
 			// don't support a Kryo specific target yet.
-			"-mcpu=cortex-a57",
+			"-mcpu=cortex-a53",
 		},
 	}
 
@@ -99,7 +99,7 @@ func init() {
 		"denver64")
 
 	// Clang supports specific Kryo targeting
-	replaceFirst(arm64ClangCpuVariantCflags["kryo"], "-mcpu=cortex-a57", "-mcpu=kryo")
+	replaceFirst(arm64ClangCpuVariantCflags["kryo"], "-mcpu=cortex-a53", "-mcpu=kryo")
 
 	pctx.StaticVariable("arm64GccVersion", arm64GccVersion)
 
