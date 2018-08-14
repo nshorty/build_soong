@@ -417,8 +417,10 @@ func TransformSourceToObj(ctx android.ModuleContext, subdir string, srcFiles and
 
 		ccDesc := ccCmd
 
+		var extraFlags string
 		if flags.clang {
 			ccCmd = "${config.ClangBin}/" + ccCmd
+			extraFlags = " ${config.VendorClangFlags}"
 		} else {
 			ccCmd = gccCmd(flags.toolchain, ccCmd)
 		}
@@ -439,7 +441,7 @@ func TransformSourceToObj(ctx android.ModuleContext, subdir string, srcFiles and
 			Implicits:       cFlagsDeps,
 			OrderOnly:       pathDeps,
 			Args: map[string]string{
-				"cFlags": moduleCflags,
+				"cFlags": moduleCflags + extraFlags,
 				"ccCmd":  ccCmd,
 			},
 		})
@@ -457,7 +459,7 @@ func TransformSourceToObj(ctx android.ModuleContext, subdir string, srcFiles and
 				// support exporting dependencies.
 				Implicit: objFile,
 				Args: map[string]string{
-					"cFlags":    moduleToolingCflags,
+					"cFlags":    moduleToolingCflags + extraFlags,
 					"tidyFlags": flags.tidyFlags,
 				},
 			})
