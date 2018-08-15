@@ -117,6 +117,10 @@ type variableProperties struct {
 			Srcs         []string
 		}
 
+		Additional_gralloc_10_usage_bits struct {
+		        Cppflags []string
+	        }
+
 		// include Xtended variables
 		Xtended android.Product_variables
 	} `android:"arch_variant"`
@@ -241,6 +245,8 @@ type productVariables struct {
 
 	// include Xtended variables
 	Xtended android.ProductVariables
+
+	Additional_gralloc_10_usage_bits  *string `json:",omitempty"`
 }
 
 func boolPtr(v bool) *bool {
