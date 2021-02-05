@@ -182,7 +182,7 @@ func Banner(make_vars map[string]string) string {
         fmt.Fprintln(b, "============================================================")
         fmt.Fprintln(b, "                   Be Ready To Get Xtended                  ")
         fmt.Fprintln(b, "============================================================")
-        fmt.Fprintln(b, "               MSM Xtended ROM by Team-Xtended              ")
+        fmt.Fprintln(b, "                 Xtended ROM by Team-Xtended                ")
         fmt.Fprintln(b, "============================================================")
 	fmt.Fprintf(b, "%s=%s\n", "XTENDED_VERSION", make_vars["XTENDED_VERSION"])
 	fmt.Fprintf(b, "%s=%s\n", "PLATFORM_VERSION", make_vars["PLATFORM_VERSION"])
